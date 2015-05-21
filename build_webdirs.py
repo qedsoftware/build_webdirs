@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
-# import packages
-import sys, os, getopt
-
+import sys, getopt, subprocess
 from distutils.util import strtobool
 
 def prompt(query):
@@ -73,7 +71,7 @@ def main(argv):
         print(c)
     if prompt("Execute these commands?"):
         for c in cmds:
-            os.system(c)
+            subprocess.Popen(c,shell=True, executable='/bin/bash')
     
     print("Program exited.")
 
